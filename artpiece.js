@@ -10,8 +10,6 @@ class ArtPiece {
   }
 }
 
-module.exports = { ArtPiece };
-
 const piece1 = new ArtPiece('John Linnell',
     'The Man who taught Blake Painting in his Dreams',
     'Graphite on paper',
@@ -20,3 +18,5 @@ const piece1 = new ArtPiece('John Linnell',
     'https://media.tate.org.uk/art/images/work/N/N05/N05186_10.jpg',
     'https://www.tate.org.uk/art/artworks/linnell-the-man-who-taught-blake-painting-in-his-dreams-after-william-blake-n05186'
     )
+
+    module.exports = { ArtPiece, piece1};
