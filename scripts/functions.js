@@ -1,4 +1,4 @@
-//const ArtPiece = require('./artpiece');
+import {ArtPiece} from './artpiece.js'
 
 function photoLink(record) {
   const idPhoto = record.fields.thumbnailurl.filename;
@@ -24,8 +24,7 @@ function createArtPiece(record) {
   return art;
 }
 
-
-function listArtPieces(records) {
+export function listArtPieces(records) {
   let pieces = [];
 
   for (let i = 0; i < records.length; i++) {
@@ -36,7 +35,7 @@ function listArtPieces(records) {
   return pieces;
 }
 
-function populateCards(artPieces) {
+export function populateCards(artPieces) {
   const cardHolder = document.querySelector('#card_container')
   const template = document.querySelector('#card_template')
 
@@ -63,5 +62,3 @@ function populateCards(artPieces) {
     cardHolder.appendChild(clone)
   }
 }
-
-//module.export = {photoLink, createArtPiece, listArtPieces};
