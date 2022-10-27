@@ -5,7 +5,7 @@ function cleanQuery (query) {
   return query
 }
 
-function search () {
+export function search () {
   const input = document.querySelector("#search-box")
   const searchQuery = input.value
   console.log("click")
@@ -87,5 +87,12 @@ export function populateCards(artPieces) {
   }
 }
 
-const searchButton = document.querySelector("#search-button")
-searchButton.addEventListener('click', search)
+// const searchButton = document.querySelector("#search-button")
+// const form = document.querySelector("#search-form")
+
+// searchButton.addEventListener('click', search)
+
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   search();
+// });
