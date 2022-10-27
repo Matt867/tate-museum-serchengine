@@ -1,4 +1,4 @@
-const ArtPiece = require('./artpiece');
+//const ArtPiece = require('./artpiece');
 
 function photoLink(record) {
   const idPhoto = record.fields.thumbnailurl.filename;
@@ -23,3 +23,17 @@ function createArtPiece(record) {
 
   return art;
 }
+
+
+function listArtPieces(records) {
+  let pieces = [];
+
+  for (let i = 0; i < records.length; i++) {
+    let piece = createArtPiece(records[i]);
+    pieces.push(piece);
+  }
+
+  return pieces;
+}
+
+//module.export = {photoLink, createArtPiece, listArtPieces};
