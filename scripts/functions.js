@@ -12,6 +12,10 @@ export function apiLink(query, rows = 10) {
   return link
 }
 
+export function numberOfResults(data){
+  return data.nhits;
+}
+
 function photoLink(record) {
   if (!record.fields.thumbnailurl){
     return "https://www.yorkshirecareequipment.com/wp-content/uploads/2018/09/no-image-available.jpg"
