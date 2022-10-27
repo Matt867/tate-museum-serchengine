@@ -1,4 +1,4 @@
-//const ArtPiece = require('./artpiece');
+import {ArtPiece} from './artpiece.js'
 
 function cleanQuery (query) {
   query = query.replaceAll(" ", "+");
@@ -37,8 +37,7 @@ function createArtPiece(record) {
   return art;
 }
 
-
-function listArtPieces(records) {
+export function listArtPieces(records) {
   let pieces = [];
 
   for (let i = 0; i < records.length; i++) {
@@ -49,7 +48,7 @@ function listArtPieces(records) {
   return pieces;
 }
 
-function populateCards(artPieces) {
+export function populateCards(artPieces) {
   const cardHolder = document.querySelector('#card_container')
   const template = document.querySelector('#card_template')
 
@@ -75,8 +74,11 @@ function populateCards(artPieces) {
     cardHolder.appendChild(clone)
   }
 }
+<<<<<<< HEAD
 
 const searchButton = document.querySelector("#search-button")
 searchButton.addEventListener('click', search)
 
 //module.export = {photoLink, createArtPiece, listArtPieces};
+=======
+>>>>>>> 9901cdff8d6c26c86dae6d8b589b4e29f44877ef
