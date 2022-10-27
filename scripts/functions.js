@@ -36,4 +36,5 @@ function listArtPieces(records) {
   return pieces;
 }
 
+
 //module.export = {photoLink, createArtPiece, listArtPieces};
