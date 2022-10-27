@@ -3,9 +3,11 @@ let searchButton = document.querySelector('#search-btn');
 searchButton.addEventListener('click', ShowTatePictures);
 
 async function ShowTatePictures() {
-
-  const res = await fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=the-tate-collection&q=&rows=5&facet=artist&facet=medium&facet=year&facet=acquisitionyear&facet=dimensions&refine.artist=Turner%2C+Joseph+Mallord+William`);
+  let artist = document.querySelector("#search-box").value
+  artist = artist.replaceAll(" ", "+");
+  const res = await fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=the-tate-collection&q=${artist}&rows=5&facet=artist&facet=medium&facet=year&facet=acquisitionyear&facet=dimensions`);
   const data = await res.json();
+  console.log(data);
 
   //const link = PhotoLink(data.records[0]);
 
