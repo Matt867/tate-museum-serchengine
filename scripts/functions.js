@@ -1,5 +1,18 @@
 import {ArtPiece} from './artpiece.js'
 
+function cleanQuery (query) {
+  query = query.replaceAll(" ", "+");
+  return query
+}
+
+function search () {
+  const input = document.querySelector("#search-box")
+  const searchQuery = input.value
+  console.log("click")
+  location.href = `./search-results.html?searchQuery=${searchQuery}`
+}
+
+
 function photoLink(record) {
   if (!record.fields.thumbnailurl){
     return "https://www.yorkshirecareequipment.com/wp-content/uploads/2018/09/no-image-available.jpg"
@@ -65,3 +78,10 @@ export function populateCards(artPieces) {
     cardHolder.appendChild(clone);
   }
 }
+
+const searchButton = document.querySelector("#search-button")
+searchButton.addEventListener('click', search)
+
+
+
+//module.export = {photoLink, createArtPiece, listArtPieces};
