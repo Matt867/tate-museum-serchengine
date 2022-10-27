@@ -1,10 +1,5 @@
 import {ArtPiece} from './artpiece.js'
 
-function cleanQuery (query) {
-  query = query.replaceAll(" ", "+");
-  return query
-}
-
 function search () {
   const input = document.querySelector("#search-box")
   const searchQuery = input.value
@@ -81,6 +76,7 @@ export function populateCards(artPieces) {
 
 const searchButton = document.querySelector("#search-button")
 searchButton.addEventListener('click', search)
+
 
 
 
