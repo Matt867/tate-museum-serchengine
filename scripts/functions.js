@@ -7,7 +7,7 @@ function cleanQuery (query) {
 
 function search () {
   const input = document.querySelector("#search-box")
-  const searchQuery = cleanQuery(input.value)
+  const searchQuery = input.value
 
   location.href = `./search-results.html?searchQuery=${searchQuery}`
 }
@@ -74,11 +74,10 @@ export function populateCards(artPieces) {
     cardHolder.appendChild(clone)
   }
 }
-<<<<<<< HEAD
 
 const searchButton = document.querySelector("#search-button")
 searchButton.addEventListener('click', search)
 
+
+
 //module.export = {photoLink, createArtPiece, listArtPieces};
-=======
->>>>>>> 9901cdff8d6c26c86dae6d8b589b4e29f44877ef
