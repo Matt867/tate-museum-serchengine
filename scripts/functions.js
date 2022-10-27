@@ -1,5 +1,18 @@
 //const ArtPiece = require('./artpiece');
 
+function cleanQuery (query) {
+  query = query.replaceAll(" ", "+");
+  return query
+}
+
+function search () {
+  const input = document.querySelector("#search-box")
+  const searchQuery = cleanQuery(input.value)
+
+  location.href = `./search-results.html?searchQuery=${searchQuery}`
+}
+
+
 function photoLink(record) {
   const idPhoto = record.fields.thumbnailurl.filename;
   const firstLetteridPhoto = idPhoto[0];
@@ -50,7 +63,6 @@ function populateCards(artPieces) {
     let medium = clone.querySelector('#art_medium')
     let dimensions = clone.querySelector('#art_dimensions')
     let moreInfo = clone.querySelector('#art_more_info')
-    clone.addEventListener('click', () => {window.location.href = artPieces[k].moreInfoLink})
 
     imageURL.src = artPieces[k].image
     title.innerHTML = artPieces[k].title
@@ -63,5 +75,8 @@ function populateCards(artPieces) {
     cardHolder.appendChild(clone)
   }
 }
+
+const searchButton = document.querySelector("#search-button")
+searchButton.addEventListener('click', search)
 
 //module.export = {photoLink, createArtPiece, listArtPieces};
