@@ -8,7 +8,7 @@ function cleanQuery (query) {
 function search () {
   const input = document.querySelector("#search-box")
   const searchQuery = input.value
-
+  console.log("click")
   location.href = `./search-results.html?searchQuery=${searchQuery}`
 }
 

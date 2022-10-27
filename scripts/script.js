@@ -1,7 +1,3 @@
-let searchButton = document.querySelector('#search-btn');
-
-searchButton.addEventListener('click', ShowTatePictures);
-
 async function ShowTatePictures(artist) {
   const res = await fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=the-tate-collection&q=${artist}&rows=5&facet=artist&facet=medium&facet=year&facet=acquisitionyear&facet=dimensions`);
   const data = await res.json();
