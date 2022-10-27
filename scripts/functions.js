@@ -53,29 +53,29 @@ export function listArtPieces(records) {
 }
 
 export function populateCards(artPieces) {
-  const cardHolder = document.querySelector('#card_container')
-  const template = document.querySelector('#card_template')
+  const cardHolder = document.querySelector('#card_container');
+  const template = document.querySelector('#card_template');
 
 
   for(let k = 0; k < artPieces.length; k++){
-    const clone = template.content.cloneNode(true)
-    let imageURL = clone.querySelector('#art_main_image')
-    let title = clone.querySelector('#art_title')
-    let artist = clone.querySelector('#author_name')
-    let year = clone.querySelector('#art_year')
-    let medium = clone.querySelector('#art_medium')
-    let dimensions = clone.querySelector('#art_dimensions')
-    let moreInfo = clone.querySelector('#art_more_info')
+    const clone = template.content.cloneNode(true);
+    let imageURL = clone.querySelector('#art_main_image');
+    let title = clone.querySelector('#art_title');
+    let artist = clone.querySelector('#author_name');
+    let year = clone.querySelector('#art_year');
+    let medium = clone.querySelector('#art_medium');
+    let dimensions = clone.querySelector('#art_dimensions');
+    let moreInfo = clone.querySelector('#art_more_info');
 
-    imageURL.src = artPieces[k].image
-    title.innerHTML = artPieces[k].title
-    medium.innerHTML = artPieces[k].medium
-    dimensions.innerHTML = artPieces[k].dimensions
-    year.innerHTML = artPieces[k].year
-    moreInfo.href = artPieces[k].moreInfoLink
-    artist.innerHTML = artPieces[k].author
+    imageURL.src = artPieces[k].image;
+    title.innerHTML = artPieces[k].title;
+    medium.innerHTML = '<strong>MEDIUM: </strong>' + artPieces[k].medium;
+    dimensions.innerHTML = '<strong>DIMENSIONS: </strong>' + artPieces[k].dimensions;
+    year.innerHTML = '<strong>YEAR: </strong>' + artPieces[k].year;
+    moreInfo.href = artPieces[k].moreInfoLink;
+    artist.innerHTML = '<strong>ARTIST: </strong>' + artPieces[k].author;
 
-    cardHolder.appendChild(clone)
+    cardHolder.appendChild(clone);
   }
 }
 
