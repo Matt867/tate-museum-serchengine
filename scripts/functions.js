@@ -1,6 +1,10 @@
 import {ArtPiece} from './artpiece.js'
 
 function photoLink(record) {
+  if (!record.fields.thumbnailurl){
+    return "https://www.yorkshirecareequipment.com/wp-content/uploads/2018/09/no-image-available.jpg"
+  }
+
   const idPhoto = record.fields.thumbnailurl.filename;
   const firstLetteridPhoto = idPhoto[0];
   const first3LettersidPhoto = idPhoto.substring(0, 3);
