@@ -1,12 +1,13 @@
 
-import { listArtPieces, populateCards } from './functions.js'
+import { listArtPieces, populateCards, apiLink } from './functions.js'
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const query = urlParams.get('searchQuery')
 
-async function showTatePictures (artist){
-  const res = await fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=the-tate-collection&q=${query}&rows=600&facet=artist&facet=medium&facet=year&facet=acquisitionyear&facet=dimensions`);
+async function showTatePictures (query, rows = 10){
+  console.log(apiLink(query, rows));
+  const res = await fetch(apiLink(query, rows));
   const data = await res.json();
   return data
 }

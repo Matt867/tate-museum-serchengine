@@ -12,6 +12,10 @@ function search () {
   location.href = `./search-results.html?searchQuery=${searchQuery}`
 }
 
+export function apiLink(query, rows = 10) {
+  const link = `https://public.opendatasoft.com/api/records/1.0/search/?dataset=the-tate-collection&q=${query}&rows=${rows}`
+  return link
+}
 
 function photoLink(record) {
   if (!record.fields.thumbnailurl){
@@ -81,7 +85,3 @@ export function populateCards(artPieces) {
 
 const searchButton = document.querySelector("#search-button")
 searchButton.addEventListener('click', search)
-
-
-
-//module.export = {photoLink, createArtPiece, listArtPieces};
