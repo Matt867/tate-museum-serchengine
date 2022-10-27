@@ -12,6 +12,7 @@ const piece1 = new ArtPiece('John Linnell',
 const cardHolder = document.querySelector('#card_container')
 const template = document.querySelector('#card_template')
 
+
 for(let k = 0; k < 32; k++){
     const clone = template.content.cloneNode(true)
     let imageURL = clone.querySelector('#art_main_image')
@@ -21,6 +22,7 @@ for(let k = 0; k < 32; k++){
     let medium = clone.querySelector('#art_medium')
     let dimensions = clone.querySelector('#art_dimensions')
     let moreInfo = clone.querySelector('#art_more_info')
+    clone.addEventListener('click', () => {window.location.href = piece1.moreInfoLink})
 
     imageURL.src = piece1.image
     title.innerHTML = piece1.title
