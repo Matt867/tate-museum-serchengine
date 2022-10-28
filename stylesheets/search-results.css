@@ -6,6 +6,18 @@ h1{
     padding: 10px;
 }
 
+#first-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+.select {
+    padding: 10px;
+    text-align: right;
+}
+
 #search-container{
     display: grid;
     grid-auto-flow: column;
@@ -26,11 +38,6 @@ h1{
     margin-left: 2%;
     margin-right: 2%;
 }
-
-#search-container {
-    padding-left: 2.5%;
-}
-
 #card_container {
     display: grid;
     grid-auto-flow: row;

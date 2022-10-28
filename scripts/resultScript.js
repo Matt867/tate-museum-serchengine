@@ -1,18 +1,20 @@
 
-import { listArtPieces, populateCards, apiLink , numberOfResults, populateHeader} from './functions.js'
+import { listArtPieces, populateSearchInfo, populateCards, apiLink , numberOfResults, populateHeader} from './functions.js'
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const query = urlParams.get('searchQuery');
+const rows = urlParams.get('rows');
 
-async function showTatePictures (query, rows = 10){
+async function showTatePictures (query, rows){
   const res = await fetch(apiLink(query, rows));
   const data = await res.json();
 
   return data
 }
 
-showTatePictures(query).then((data) => {
+showTatePictures(query, rows).then((data) => {
+  populateSearchInfo(query, rows);
   populateCards(listArtPieces(data.records));
   populateHeader(numberOfResults(data), query);
 }
