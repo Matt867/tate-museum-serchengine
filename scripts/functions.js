@@ -1,6 +1,15 @@
 import {ArtPiece} from './artpiece.js'
 
+<<<<<<< HEAD
 function search () {
+=======
+function cleanQuery (query) {
+  query = query.replaceAll(" ", "+");
+  return query
+}
+
+export function search () {
+>>>>>>> 79028fb67e170376249e0626dfbfe3c9a6d90c9e
   const input = document.querySelector("#search-box")
   const searchQuery = input.value
   console.log("click")
@@ -16,12 +25,25 @@ export function numberOfResults(data){
   return data.nhits;
 }
 
+export function populateNumberOfResults(nResults) {
+  const result = document.querySelector('#results');
+
+  result.innerHTML = `About ${nResults} results for placeholder search query`
+}
+
 function photoLink(record) {
   if (!record.fields.thumbnailurl){
     return "https://www.yorkshirecareequipment.com/wp-content/uploads/2018/09/no-image-available.jpg"
   }
 
   const idPhoto = record.fields.thumbnailurl.filename;
+
+  if (idPhoto.substring(0, 2) === 'AR' || idPhoto.substring(0, 2) === 'ar' ) {
+    const first2LettersidPhoto = idPhoto.substring(0, 2);
+    const link = `https://media.tate.org.uk/art/images/work/${first2LettersidPhoto}/${idPhoto}`;
+    return link;
+  }
+
   const firstLetteridPhoto = idPhoto[0];
   const first3LettersidPhoto = idPhoto.substring(0, 3);
 
@@ -81,6 +103,3 @@ export function populateCards(artPieces) {
     cardHolder.appendChild(clone);
   }
 }
-
-const searchButton = document.querySelector("#search-button")
-searchButton.addEventListener('click', search)
