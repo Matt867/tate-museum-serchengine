@@ -1,11 +1,13 @@
 import {search} from './functions.js'
 
-const searchButton = document.querySelector("#search-button")
-const form = document.querySelector("#search-form")
-
-searchButton.addEventListener('click', search)
+const form = document.querySelector("#search-form");
+const selectRows = document.querySelector("#select-rows");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   search();
 });
+
+if (selectRows) {
+  selectRows.addEventListener('change', search);
+}
