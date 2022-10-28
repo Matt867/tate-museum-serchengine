@@ -27,6 +27,13 @@ function photoLink(record) {
   }
 
   const idPhoto = record.fields.thumbnailurl.filename;
+
+  if (idPhoto.substring(0, 2) === 'AR' || idPhoto.substring(0, 2) === 'ar' ) {
+    const first2LettersidPhoto = idPhoto.substring(0, 2);
+    const link = `https://media.tate.org.uk/art/images/work/${first2LettersidPhoto}/${idPhoto}`;
+    return link;
+  }
+
   const firstLetteridPhoto = idPhoto[0];
   const first3LettersidPhoto = idPhoto.substring(0, 3);
 
