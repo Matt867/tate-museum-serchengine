@@ -1,0 +1,165 @@
+h1{
+    margin: 0;
+}
+
+#results {
+    padding: 10px;
+}
+
+#first-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+.select {
+    padding: 10px;
+    text-align: right;
+}
+
+#home-button {
+    width: 40px;
+}
+
+#search-form {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: minmax(300px, auto) minmax(150px, 300px);
+    gap: 20px;
+}
+
+#search-container{
+    display: grid;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+
+    grid-auto-flow: row;
+    grid-template-columns: 40px auto;
+    gap: 20px;
+
+}
+
+#header-container {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#card_container {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fill, 20rem);
+    justify-content: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    gap: 50px;
+}
+
+
+.card {
+    box-shadow: 0 6px 7px rgba(0,0,0,0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+#image-container {
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+    align-content: center;
+
+    height:25rem;
+    width: 20rem;
+    background-color: rgb(71, 71, 71);
+}
+
+.landscape {
+    width: 20rem;
+}
+
+.portrait {
+    height: 25rem;
+}
+
+.card:hover {
+    transform: scale(1.05,1.05);
+    box-shadow: 0 12px 15px rgba(0,0,0,0.3);
+}
+
+form > input {
+    height: 40px;
+    border-radius: 10px;
+    border-style: none;
+    padding-left: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: medium;
+    box-shadow: 0px 0px 12px -3px rgba(0,0,0,0.75);
+}
+
+form > button{
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    border-style: none;
+    padding: 0;
+    background-color: rgb(170, 35, 35);
+    color: white;
+    font-size: medium;
+    box-shadow: 0px 0px 12px -3px rgba(0,0,0,0.75);
+    justify-self: center;
+}
+
+/* form > button:hover {
+    background-color: rgb(85, 85, 85);
+} */
+
+#spacer {
+    height: 90px
+}
+
+@media(max-width: 600px) {
+    #search-container {
+        grid-auto-flow: row;
+        grid-template-columns: auto;
+        gap: 20px;
+        padding: 10px
+    }
+
+    #spacer {
+        margin: 4%;
+    }
+
+    #home-button {
+        display: none;
+    }
+
+    #search-form {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: 100%;
+        width: 100%;
+        gap: 10px
+    }
+
+    #search-box {
+        width: 100%;
+        margin: 0px;
+    }
+
+    #search-button{
+        width: 100%;
+    }
+
+    #select-rows {
+        font-size: large;
+    }
+
+}
