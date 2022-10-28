@@ -21,10 +21,10 @@ export function numberOfResults(data){
   return data.nhits;
 }
 
-export function populateNumberOfResults(nResults) {
+export function populateHeader(nResults, query) {
   const result = document.querySelector('#results');
 
-  result.innerHTML = `About ${nResults} results for placeholder search query`
+  result.innerHTML = `Tate Museum found <strong>${nResults}</strong> results for <strong>'${query}'</strong>`
 }
 
 function photoLink(record) {
@@ -97,9 +97,10 @@ export function populateCards(artPieces) {
     artist.innerHTML = '<strong>ARTIST: </strong>' + artPieces[k].author;
 
     cardHolder.appendChild(clone);
-    if (imageURL.naturalWidth > imageURL.naturalHeight) {
+
+    if (imageURL.naturalWidth >= imageURL.naturalHeight) {
       imageURL.classList.add('landscape')
-    } else {
+    } else if (imageURL.naturalHeight > imageURL.naturalWidth) {
       imageURL.classList.add('portrait')
     }
     console.log(imageURL.naturalHeight)
