@@ -44,9 +44,13 @@ h1{
     background-color: rgb(71, 71, 71);
 }
 
-#image-container > img {
-    max-width: 20rem;
-    max-height: 25rem;
+.landscape {
+    width: 20rem;
+}
+
+.portrait {
+    height: 25rem;
+    width: fit-content;
 }
 
 .card:hover {

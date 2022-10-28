@@ -1,15 +1,11 @@
 import {ArtPiece} from './artpiece.js'
 
-<<<<<<< HEAD
-function search () {
-=======
 function cleanQuery (query) {
   query = query.replaceAll(" ", "+");
   return query
 }
 
 export function search () {
->>>>>>> 79028fb67e170376249e0626dfbfe3c9a6d90c9e
   const input = document.querySelector("#search-box")
   const searchQuery = input.value
   console.log("click")
@@ -101,5 +97,11 @@ export function populateCards(artPieces) {
     artist.innerHTML = '<strong>ARTIST: </strong>' + artPieces[k].author;
 
     cardHolder.appendChild(clone);
+    if (imageURL.naturalWidth > imageURL.naturalHeight) {
+      imageURL.classList.add('landscape')
+    } else {
+      imageURL.classList.add('portrait')
+    }
+    console.log(imageURL.naturalHeight)
   }
 }
