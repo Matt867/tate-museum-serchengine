@@ -1,15 +1,13 @@
 import {ArtPiece} from './artpiece.js'
 
-function cleanQuery (query) {
-  query = query.replaceAll(" ", "+");
-  return query
-}
+const input = document.querySelector("#search-box")
+const selectRows = document.querySelector("#select-rows")
+
 
 export function search () {
-  const input = document.querySelector("#search-box")
-  const searchQuery = input.value
-  console.log("click")
-  location.href = `./search-results.html?searchQuery=${searchQuery}`
+  const searchQuery = input.value;
+  const rows = selectRows ? selectRows.value : 10;
+  location.href = `./search-results.html?searchQuery=${searchQuery}&rows=${rows}`;
 }
 
 export function apiLink(query, rows = 10) {
@@ -19,6 +17,11 @@ export function apiLink(query, rows = 10) {
 
 export function numberOfResults(data){
   return data.nhits;
+}
+
+export function populateSearchInfo(query, rows) {
+  input.value = query;
+  selectRows.value = rows;
 }
 
 export function populateNumberOfResults(nResults) {

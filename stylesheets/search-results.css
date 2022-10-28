@@ -6,6 +6,16 @@ h1{
     padding: 10px;
 }
 
+#first-row {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.select {
+    padding: 10px;
+    text-align: right;
+}
+
 #search-container{
     display: grid;
     align-items: center;
