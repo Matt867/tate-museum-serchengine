@@ -76,6 +76,14 @@ export function listArtPieces(records) {
   return pieces;
 }
 
+function alignPhotos(imageURL){
+  if (imageURL.naturalWidth >= imageURL.naturalHeight) {
+    imageURL.classList.add('landscape')
+  } else if (imageURL.naturalHeight > imageURL.naturalWidth) {
+    imageURL.classList.add('portrait')
+  }
+}
+
 export function populateCards(artPieces) {
   const cardHolder = document.querySelector('#card_container');
   const template = document.querySelector('#card_template');
@@ -101,11 +109,10 @@ export function populateCards(artPieces) {
 
     cardHolder.appendChild(clone);
 
-    if (imageURL.naturalWidth >= imageURL.naturalHeight) {
-      imageURL.classList.add('landscape')
-    } else if (imageURL.naturalHeight > imageURL.naturalWidth) {
-      imageURL.classList.add('portrait')
-    }
+    alignPhotos(imageURL)
+
     console.log(imageURL.naturalHeight)
   }
+
+  console.log("HELLO")
 }
