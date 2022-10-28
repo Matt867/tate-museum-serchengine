@@ -9,6 +9,8 @@ h1{
 #first-row {
     display: grid;
     grid-template-columns: auto auto;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
 }
 
 .select {
@@ -18,28 +20,56 @@ h1{
 
 #search-container{
     display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 10fr;
+    gap: 10px;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     background-color: black;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
     width: 100%;
+    height: 80px;
 }
 
+#header-container {
+    margin-left: 2%;
+    margin-right: 2%;
+}
 #card_container {
     display: grid;
     grid-auto-flow: row;
     grid-template-columns: repeat(auto-fill, 20rem);
     justify-content: center;
-
+    margin-left: 2%;
+    margin-right: 2%;
     gap: 50px;
 }
 
 .card {
     box-shadow: 0 6px 7px rgba(0,0,0,0.3);
     transition: all 0.2s ease-in-out;
+}
+
+#image-container {
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+    align-content: center;
+
+    height:25rem;
+    width: 20rem;
+    background-color: rgb(71, 71, 71);
+}
+
+.landscape {
+    width: 20rem;
+}
+
+.portrait {
+    height: 25rem;
 }
 
 .card:hover {

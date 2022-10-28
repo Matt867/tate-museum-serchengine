@@ -5,7 +5,10 @@ body{
     display: grid;
     place-items: center;
     min-height: 100vh;
-    background: whitesmoke;
+    /* background: whitesmoke; */
+    background-image: URL("../images/tatebritain.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 h1 {

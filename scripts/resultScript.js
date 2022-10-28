@@ -1,5 +1,5 @@
 
-import { listArtPieces, populateSearchInfo, populateCards, apiLink , numberOfResults, populateNumberOfResults} from './functions.js'
+import { listArtPieces, populateSearchInfo, populateCards, apiLink , numberOfResults, populateHeader} from './functions.js'
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -16,5 +16,6 @@ async function showTatePictures (query, rows){
 showTatePictures(query, rows).then((data) => {
   populateSearchInfo(query, rows);
   populateCards(listArtPieces(data.records));
-  populateNumberOfResults(numberOfResults(data));
-});
+  populateHeader(numberOfResults(data), query);
+}
+)
