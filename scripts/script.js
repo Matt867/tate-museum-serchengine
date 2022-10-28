@@ -7,6 +7,7 @@ const homeButton = document.querySelector("#home-button");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   search();
+
 });
 
 if (selectRows) {

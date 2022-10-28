@@ -48,6 +48,12 @@ h1{
     gap: 50px;
 }
 
+#home-button {
+    width: 30px;
+    margin-right: 30px;
+    margin-left: 60px;
+}
+
 .card {
     box-shadow: 0 6px 7px rgba(0,0,0,0.3);
     transition: all 0.2s ease-in-out;
