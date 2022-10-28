@@ -1,7 +1,7 @@
-import {ArtPiece} from './artpiece.js'
+import {ArtPiece} from './artpiece.js';
 
-const input = document.querySelector("#search-box")
-const selectRows = document.querySelector("#select-rows")
+const input = document.querySelector('#search-box');
+const selectRows = document.querySelector('#select-rows');
 
 
 export function search () {
@@ -10,12 +10,12 @@ export function search () {
   location.href = `./search-results.html?searchQuery=${searchQuery}&rows=${rows}`;
 }
 
-export function apiLink(query, rows = 10) {
-  const link = `https://public.opendatasoft.com/api/records/1.0/search/?dataset=the-tate-collection&q=${query}&rows=${rows}`
-  return link
+export function apiLink(query, rows) {
+  const link = `https://public.opendatasoft.com/api/records/1.0/search/?dataset=the-tate-collection&q=${query}&rows=${rows}`;
+  return link;
 }
 
-export function numberOfResults(data){
+export function numberOfResults(data) {
   return data.nhits;
 }
 
@@ -27,12 +27,12 @@ export function populateSearchInfo(query, rows) {
 export function populateHeader(nResults, query) {
   const result = document.querySelector('#results');
 
-  result.innerHTML = `Tate Museum found <strong>${nResults}</strong> results for <strong>'${query}'</strong>`
+  result.innerHTML = `Tate Museum found <strong>${nResults}</strong> results for <strong>'${query}'</strong>`;
 }
 
 function photoLink(record) {
-  if (!record.fields.thumbnailurl){
-    return "https://www.yorkshirecareequipment.com/wp-content/uploads/2018/09/no-image-available.jpg"
+  if (!record.fields.thumbnailurl) {
+    return 'https://www.yorkshirecareequipment.com/wp-content/uploads/2018/09/no-image-available.jpg';
   }
 
   const idPhoto = record.fields.thumbnailurl.filename;
@@ -46,9 +46,9 @@ function photoLink(record) {
   const firstLetteridPhoto = idPhoto[0];
   const first3LettersidPhoto = idPhoto.substring(0, 3);
 
-  const link = `https://media.tate.org.uk/art/images/work/${firstLetteridPhoto}/${first3LettersidPhoto}/${idPhoto}`
+  const link = `https://media.tate.org.uk/art/images/work/${firstLetteridPhoto}/${first3LettersidPhoto}/${idPhoto}`;
 
-  return link
+  return link;
 }
 
 function createArtPiece(record) {
@@ -76,11 +76,11 @@ export function listArtPieces(records) {
   return pieces;
 }
 
-function alignPhotos(imageURL){
+function alignPhotos(imageURL) {
   if (imageURL.naturalWidth >= imageURL.naturalHeight) {
-    imageURL.classList.add('landscape')
-  } else if (imageURL.naturalHeight > imageURL.naturalWidth) {
-    imageURL.classList.add('portrait')
+    imageURL.classList.add('landscape');
+  } else {
+    imageURL.classList.add('portrait');
   }
 }
 
@@ -89,7 +89,7 @@ export function populateCards(artPieces) {
   const template = document.querySelector('#card_template');
 
 
-  for(let k = 0; k < artPieces.length; k++){
+  for(let k = 0; k < artPieces.length; k++) {
     const clone = template.content.cloneNode(true);
     let imageURL = clone.querySelector('#art_main_image');
     let title = clone.querySelector('#art_title');
@@ -109,10 +109,6 @@ export function populateCards(artPieces) {
 
     cardHolder.appendChild(clone);
 
-    alignPhotos(imageURL)
-
-    console.log(imageURL.naturalHeight)
+    alignPhotos(imageURL);
   }
-
-  console.log("HELLO")
 }
