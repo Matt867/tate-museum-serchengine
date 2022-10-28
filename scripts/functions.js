@@ -21,6 +21,12 @@ export function numberOfResults(data){
   return data.nhits;
 }
 
+export function populateNumberOfResults(nResults) {
+  const result = document.querySelector('#results');
+
+  result.innerHTML = `About ${nResults} results for placeholder search query`
+}
+
 function photoLink(record) {
   if (!record.fields.thumbnailurl){
     return "https://www.yorkshirecareequipment.com/wp-content/uploads/2018/09/no-image-available.jpg"
@@ -93,13 +99,3 @@ export function populateCards(artPieces) {
     cardHolder.appendChild(clone);
   }
 }
-
-// const searchButton = document.querySelector("#search-button")
-// const form = document.querySelector("#search-form")
-
-// searchButton.addEventListener('click', search)
-
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   search();
-// });
