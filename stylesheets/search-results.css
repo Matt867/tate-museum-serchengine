@@ -125,7 +125,7 @@ form > button{
     height: 90px
 }
 
-@media(max-width: 480px) {
+@media(max-width: 600px) {
     #search-container {
         grid-auto-flow: row;
         grid-template-columns: auto;
