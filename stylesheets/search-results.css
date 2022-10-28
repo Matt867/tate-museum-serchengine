@@ -35,14 +35,14 @@ h1{
     justify-content: center;
     align-content: center;
 
-    max-width: 20rem;
-    height:400px;
-
+    height:25rem;
+    width: 20rem;
     background-color: rgb(71, 71, 71);
 }
 
 #image-container > img {
-    width: 20rem;
+    max-width: 20rem;
+    max-height: 25rem;
 }
 
 .card:hover {
