@@ -7,7 +7,7 @@ const selectRows = document.querySelector('#select-rows');
 export function search () {
   const searchQuery = input.value;
   const rows = selectRows ? selectRows.value : 10;
-  location.href = `./search-results.html?searchQuery=${searchQuery}&rows=${rows}`;
+  location.href = `./results?searchQuery=${searchQuery}&rows=${rows}`;
 }
 
 export function apiLink(query, rows) {

@@ -1,0 +1,22 @@
+{
+  "name": "tate-museum-serchengine",
+  "version": "1.0.0",
+  "description": "Tate Modern is the jewel in the crown of modern art galleries in London. It holds the nation's collection of modern art from 1900 to the present day. With 5.7 million visitors it is in the top ten most visited museums and galleries in the world. The collection holds masterpieces of international and British modern art.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matt867/tate-museum-serchengine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matt867/tate-museum-serchengine/issues"
+  },
+  "homepage": "https://github.com/Matt867/tate-museum-serchengine#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
